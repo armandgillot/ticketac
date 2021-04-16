@@ -36,12 +36,13 @@ var journeyModel = mongoose.model('journey', journeySchema);
 
 var city = ["Paris", "Marseille", "Nantes", "Lyon", "Rennes", "Melun", "Bordeaux", "Lille"]
 var date = ["2018-11-20", "2018-11-21", "2018-11-22", "2018-11-23", "2018-11-24"]
-var searchResult = [];
+var searchResult = false;
 // ROUTES----------------------------------------------------------------------------------------
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
   if(req.session.user){
+    searchResult = false;
     res.render('index', {searchResult})
   }
   res.render('sign');
