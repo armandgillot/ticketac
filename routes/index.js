@@ -123,7 +123,7 @@ router.post('/sign-in', async function (req, res, next) {
     console.log(req.session.user.id);
     res.render('index', { searchResult })
   } else {  //sinon 
-    res.render('/')
+    res.redirect('/')
   }
 });
 
