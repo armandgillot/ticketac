@@ -9,7 +9,7 @@ body {
   background: linear-gradient(180deg, rgba(170,243,249,0.3200630594034489) 15%, rgba(49,133,221,1) 100%);
   
   color: #FFFFFF;
-  min-height: 88.7vh;
+  min-height: 90.4vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,9 @@ body {
 .header {
   margin-bottom: 20px;
   color: #FFFFFF;
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100%;
 }
 
 
@@ -36,3 +39,8 @@ h3 {
   font-size: 20px;
   text-align: left;
 }
+
+.droite {
+  display: flex;
+}
+
