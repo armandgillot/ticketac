@@ -18,7 +18,7 @@ router.post('/sign-in', async function (req, res, next) {
       id: searchUser._id
     }
     console.log(req.session.user.id);
-    res.render('index', { searchResult })
+    res.redirect('/')
   } else {  //sinon 
     res.redirect('/')
   }
