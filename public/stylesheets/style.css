@@ -1,6 +1,7 @@
 body {
 
   font: 14px "Lucida Grande", Poppins;
+  background:url(/images/landmark.png) no-repeat center center;
 }
 
 
@@ -11,7 +12,7 @@ body {
   color: #FFFFFF;
   min-height: 90.4vh;
   display: flex;
-  align-items: center;
+  
   justify-content: center;
 }
 

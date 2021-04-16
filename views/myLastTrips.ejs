@@ -19,7 +19,7 @@
       </span>
 
       <span class="droite">
-        <a class="navbar" href="/logout"><h3>Déconnexion</h3></a>
+        <a class="navbar" href="/logout"><h3>Déconnexion</h3></a>-
         <a class="navbar" href="/myLastTrips"><h3>My Last Trip</h3></a>
       </span>
 
@@ -35,7 +35,7 @@
     
   
 <!--Resultat-->
-<div class="list-group col-lg-6 offset-lg-3">
+<div class="list-group col-lg-6 offset-lg-3 mt-5 mb-5">
   <% for(let i=0;i< liste.length; i++) {%>
       <div class="list-group-item d-flex justify-content-between">
       <span class="fw-bold"><%= liste[i].departure %> / <%= liste[i].arrival %></span> 
