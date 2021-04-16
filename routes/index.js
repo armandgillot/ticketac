@@ -57,9 +57,8 @@ router.post('/result', async (req, res, next) => {
 /* GET home page. */
 router.get('/addBasket', async (req, res, next) => {
   ticket = await journeyModel.findOne({ _id: req.query.id })
-  console.log(ticket);
   addTicket = await usersModel.find({_id: req.session.user.id})
-  console.log(addTicket);
+
   addTicket[0].reserv.push({
       departure: ticket.departure,
       arrival: ticket.arrival,
@@ -74,13 +73,31 @@ router.get('/addBasket', async (req, res, next) => {
 
 /* GET BASKET. */
 router.get('/basket', async (req, res, next) => {
-
+  
   var user = await usersModel.findById(req.session.user.id)
   var listeVoyage = user.reserv
-
+  
   res.render('basket', {listeVoyage});
 });
 
+/* Anciens voyages déjà payés. */
+router.get('/alreadyReserv', async (req, res, next) => {
+  
+  var user = await usersModel.findById(req.session.user.id)
+console.log(user.reserv.length);
+  for(let i=0;i<user.reserv.length; i++) {
+  user.alreadyReserv.push({
+      departure: user.reserv[i].departure,
+      arrival: user.reserv[i].arrival,
+      date: user.reserv[i].date,
+      departureTime: user.reserv[i].departureTime,
+      price: user.reserv[i].price
+  })
+  var userSaved = await user.save()
+}
+
+  res.render('index', {searchResult});
+});
 
 // route connexion - utilisateur a déjà un compte dans l'app 
 router.post('/sign-in', async function (req, res, next) {
