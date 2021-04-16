@@ -83,7 +83,7 @@ router.get('/basket', async (req, res, next) => {
 /* Anciens voyages déjà payés. */
 router.get('/alreadyReserv', async (req, res, next) => {
   
-  var user = await usersModel.findById(req.session.user.id)
+var user = await usersModel.findById(req.session.user.id)
 console.log(user.reserv.length);
   for(let i=0;i<user.reserv.length; i++) {
   user.alreadyReserv.push({
@@ -96,8 +96,17 @@ console.log(user.reserv.length);
   var userSaved = await user.save()
 }
 
-  res.render('index', {searchResult});
+  res.redirect('/myLastTrips');
 });
+
+/* Pour CONSULTER My Last Trips. */
+router.get('/mylasttrips', async (req, res, next) => {
+  
+  var user = await usersModel.findById(req.session.user.id)
+  var liste = user.alreadyReserv
+  
+    res.render('myLastTrips', {liste});
+  });
 
 // route connexion - utilisateur a déjà un compte dans l'app 
 router.post('/sign-in', async function (req, res, next) {
