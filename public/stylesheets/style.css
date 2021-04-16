@@ -1,0 +1,38 @@
+body {
+
+  font: 14px "Lucida Grande", Poppins;
+}
+
+
+
+.home {
+  background: linear-gradient(180deg, rgba(170,243,249,0.3200630594034489) 15%, rgba(49,133,221,1) 100%);
+  
+  color: #FFFFFF;
+  min-height: 88.7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header {
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+
+.btn {
+  background-color: #dd3160;
+}
+
+.logo {
+  margin-left: 40px;
+}
+
+h3 {
+  font: bold;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+}
